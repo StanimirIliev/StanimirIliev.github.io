@@ -9,24 +9,26 @@
   <body class="doc">
     <img class="logo" src="images/logo.png" />
     <div class="container" >
-        <button class="button button__login" id="buttonLogin" onclick="loginShrinkExpand()">
+        <button type="button" form="" class="button button__login" id="buttonLogin" onclick="loginShrinkExpand()">
             I have already account
         </button><br>
-        <form class="form" id="loginForm">
+        <form class="form" id="loginForm" method="post">
             <label class="form__label" for="usernameLogin">Username</label>
             <input class="form__input" id="usernameLogin" name="username" />
             <label class="form__label" for="passwordLogin">Password</label>
             <input class="form__input" id="passwordLogin" type="password" name="password"/>
+            <button type="submit" form="loginForm" class="button button--action">Log in</button>
         </form>
-        <form class="form" id="registerForm">
+        <form class="form" id="registerForm" method="post">
             <label class="form__label" for="usernameRegister">Username</label>
             <input class="form__input" id="usernameRegister" name="username" />
             <label class="form__label" for="passwordRegister">Password</label>
             <input class="form__input" id="passwordRegister" type="password" name="password"/>
             <label class="form__label" for="confirmPassword">Confirm password</label>
             <input class="form__input" id="confirmPassword" type="password" name="confirmPassword"/>
+            <button type="submit" form="registerForm" class="button button--action">Register</button>
         </form>
-        <button class="button button__register" id="buttonRegister" onclick="registerShrinkExpand()">
+        <button type="button" class="button button__register" id="buttonRegister" onclick="registerShrinkExpand()">
             Create new account
         </button>
     </div>

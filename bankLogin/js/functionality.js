@@ -33,7 +33,7 @@ function shrinkLogin() {
 function expandLogin() {
   loginContent.style.visibility = "visible";
   loginContent.style.position = "relative";
-  login.innerText = "Log in";
+  login.innerText = "Back";
 }
 function shrinkRegister() {
   registerContent.style.visibility = "hidden";
@@ -43,5 +43,5 @@ function shrinkRegister() {
 function expandRegister() {
   registerContent.style.visibility = "visible";
   registerContent.style.position = "relative";
-  register.innerText = "Register";
+  register.innerText = "Back";
 }

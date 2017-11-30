@@ -40,6 +40,12 @@
   font-weight      : bold;
 }
 
+.button--action {
+  height           : 60px;
+  border-radius    : 5px;
+  background-color : rgba(49, 150, 255, 0.75);
+}
+
 .button__login {
   border-bottom-right-radius : 5px;
   border-bottom-left-radius  : 5px;
