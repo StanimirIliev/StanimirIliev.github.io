@@ -1,104 +1,183 @@
 body {
-  background-color: #3171c8;
-  z-index: -1;
-}
-#logo {
-  position: absolute;
-  width: 40%;
-  height: 90%;
-  margin: auto 30%;
-  z-index = 0;
-}
-#logingAndRegister{
-  position:absolute;
-  width: 30%;
-  height: 20%;
-  margin: 26% 33%;
-  z-index: 2;
-}
-#login, #register {
-  border-radius: 20px;
-  border: 1px solid;
-  margin-top: 2px;
-  width: 100%;
-  height: 50%;
-  background-color: rgba(49, 113, 200, 0.9);
-  color: #fff;
-  font-weight: bold;
-  font-size: 18pt;
-  z-index: 3;
-  position: relative;
-}
-#login {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-#register {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  margin-top: -150px;
-}
-#loginForm, #registerForm {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  color: #fff;
-  font-size: 14pt;
-  visibility: hidden;
-}
-#registerForm {
-  bottom: 55px;
-}
-#loginForm input, #registerForm input {
-  clear:right;
-  position:relative;
-  float:right;
-  font-size: 12pt;
-  width: 40%;
-}
-#loginForm label, #registerForm label {
-  white-space: nowrap;
-  clear:left;
-  position:relative;
-  float:left;
-  left: 0;
-  padding-top: 4px;
-  text-shadow: 0px 0px 15px #000;
+  background-color : #3171c8;
 }
 
-@media only screen and (max-width: 480px) {/*tablets*/
+#logo {
+  position : absolute;
+  width    : 40%;
+  height   : 90%;
+  margin   : auto 30%;
+}
+
+#logingAndRegister {
+  z-index  : 2;
+  position : absolute;
+  width    : 30%;
+  height   : 20%;
+  margin   : 26% 33%;
+}
+
+#login,
+#register {
+  z-index          : 3;
+  position         : relative;
+  width            : 100%;
+  height           : 50%;
+  color            : #fff;
+  border           : 1px solid;
+  border-radius    : 20px;
+  background-color : rgba(49, 113, 200, 0.9);
+  font-size        : 18pt;
+  font-weight      : bold;
+}
+
+#login {
+  border-bottom-right-radius : 5px;
+  border-bottom-left-radius  : 5px;
+}
+
+#register {
+  bottom: 180px;
+  border-top-left-radius  : 5px;
+  border-top-right-radius : 5px;
+}
+
+#loginForm,
+#registerForm {
+  z-index    : 2;
+  visibility : hidden;
+  position   : relative;
+  width      : 100%;
+  color      : #fff;
+  font-size  : 14pt;
+  height: 60px;
+}
+
+#registerForm {
+  bottom: 80px;
+  height: 90px;
+}
+
+#loginForm input,
+#registerForm input {
+  position  : relative;
+  width     : 40%;
+  float     : right;
+  clear     : right;
+  font-size : 12pt;
+}
+
+#loginForm label,
+#registerForm label {
+  position    : relative;
+  left        : 0;
+  float       : left;
+  clear       : left;
+  padding-top : 4px;
+  text-shadow : 0px 0px 15px #000;
+  white-space : nowrap;
+}
+
+@media
+  only screen
+  and (max-width : 500px) {
+  /* smartphones */
+
   #logo {
-    width: 90%;
-    height: 70%;
-    margin: 10% 3%;
+    width  : 90%;
+    height : 70%;
+    margin : 10% 3%;
   }
-  #logingAndRegister{
-    width: 80%;
-    height: 15%;
-    margin: 50% 7%;
+
+  #logingAndRegister {
+    width  : 80%;
+    height : 15%;
+    margin : 50% 7%;
   }
-  #login, #register {
-    font-size: 12pt;
-  }
+
+  #login,
   #register {
-    margin-top: -135px;
+    font-size : 12pt;
   }
+
+  #register {
+    margin-top : -135px;
+  }
+
   #loginForm {
-    /*margin-top:10px*/
+    /* margin-top:10px */
   }
+
   #registerForm {
-    bottom: 49px;
+    bottom : 49px;
   }
-  #loginForm input, #registerForm input {
-    font-size: 10pt;
-    width: 50%;
+
+  #loginForm input,
+  #registerForm input {
+    width     : 50%;
+    font-size : 10pt;
   }
-  #loginForm label, #registerForm label {
-    font-size: 8pt;
-    padding-top: 8px;
-    text-shadow: 0px 0px 3px #000;
-  }
+
+  #loginForm label,
   #registerForm label {
-    padding-top: 12px;
+    padding-top : 8px;
+    text-shadow : 0px 0px 3px #000;
+    font-size   : 8pt;
+  }
+
+  #registerForm label {
+    padding-top : 12px;
+  }
+}
+
+@media
+  only screen
+  and (max-width : 769px) {
+  /* tablets */
+
+  #logo {
+    width  : 90%;
+    height : 70%;
+    margin : 10% 3%;
+  }
+
+  #logingAndRegister {
+    width  : 80%;
+    height : 15%;
+    margin : 50% 7%;
+  }
+
+  #login,
+  #register {
+    font-size : 16pt;
+  }
+
+  #register {
+    margin-top : -145px;
+  }
+
+  #loginForm {
+    /* margin-top:10px */
+  }
+
+  #registerForm {
+    bottom : 49px;
+  }
+
+  #loginForm input,
+  #registerForm input {
+    width     : 50%;
+    font-size : 10pt;
+  }
+
+  #loginForm label,
+  #registerForm label {
+    padding-top : 8px;
+    text-shadow : 0px 0px 3px #000;
+    font-size   : 8pt;
+  }
+
+  #registerForm label {
+    padding-top : 12px;
   }
 }
