@@ -13,19 +13,39 @@
         }
 
         function switchTab(selectedTabId) {
+            // Update the URL hash
+            history.pushState({tab: selectedTabId}, '', '#' + selectedTabId);
+
+            // Show/hide tabs
             document.querySelectorAll('.tab-content').forEach(tab => {
                 tab.style.display = tab.id === selectedTabId ? 'block' : 'none';
             });
+            // Update active class for tabs
             document.querySelectorAll('.tab-nav ul li a').forEach(tab => {
-                tab.classList.remove('active');
+                if(tab.getAttribute('href') === '#' + selectedTabId){
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
             });
-            document.querySelector('.tab-nav ul li a[href="javascript:void(0);' + selectedTabId + '"]').classList.add('active');
+        }
+
+        function handleHashChange() {
+            const tab = window.location.hash.replace('#', '');
+            if(tab) {
+                switchTab(tab);
+            } else {
+                switchTab('contact')
+            }
         }
 
         document.addEventListener('DOMContentLoaded', function () {
             switchLanguage('en'); // Default language
-            switchTab('contact'); // Default tab
+            handleHashChange(); // Open the tab based on the current URL hash
         });
+
+        // Listen to hashchange event to support back/forward navigation
+        window.addEventListener('hashchange', handleHashChange, false);
     </script>
 </head>
 <body>
@@ -45,14 +65,14 @@
 
 <nav class="tab-nav">
     <ul>
-        <li><a class="lang en" href="javascript:void(0);" onclick="switchTab('contact')">Contact</a></li>
-        <li><a class="lang bg" href="javascript:void(0);" onclick="switchTab('contact')">Контакти</a></li>
+        <li><a class="lang en" href="#contact" onclick="switchTab('contact')">Contact</a></li>
+        <li><a class="lang bg" href="#contact" onclick="switchTab('contact')">Контакти</a></li>
 
-        <li><a class="lang en" href="javascript:void(0);" onclick="switchTab('terms')">Terms of Use</a></li>
-        <li><a class="lang bg" href="javascript:void(0);" onclick="switchTab('terms')">Условия на Ползване</a></li>
+        <li><a class="lang en" href="#terms" onclick="switchTab('terms')">Terms of Use</a></li>
+        <li><a class="lang bg" href="#terms" onclick="switchTab('terms')">Условия на Ползване</a></li>
 
-        <li><a class="lang en" href="javascript:void(0);" onclick="switchTab('privacy')">Privacy Policy</a></li>
-        <li><a class="lang bg" href="javascript:void(0);" onclick="switchTab('privacy')">Поверителност</a></li>
+        <li><a class="lang en" href="#privacy" onclick="switchTab('privacy')">Privacy Policy</a></li>
+        <li><a class="lang bg" href="#privacy" onclick="switchTab('privacy')">Поверителност</a></li>
     </ul>
 </nav>
 
