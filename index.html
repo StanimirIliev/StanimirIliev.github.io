@@ -1,6 +1,197 @@
-<html>
-	<body>
-		<h3>Privacy</h3>
-		<p>We don't collect <b>any</b> user data. Everything stays on your phone.</p>
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finaboard Support Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function switchLanguage(lang) {
+            document.querySelectorAll('.lang').forEach(el => {
+                el.style.display = el.classList.contains(lang) ? '' : 'none';
+            });
+        }
+
+        function switchTab(selectedTabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.style.display = tab.id === selectedTabId ? 'block' : 'none';
+            });
+            document.querySelectorAll('.tab-nav ul li a').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelector('.tab-nav ul li a[href="javascript:void(0);' + selectedTabId + '"]').classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            switchLanguage('en'); // Default language
+            switchTab('contact'); // Default tab
+        });
+    </script>
+</head>
+<body>
+<header>
+    <h1>
+        <span class="lang en">Welcome to Finaboard Support Page</span>
+        <span class="lang bg">Добре дошли в страницата за поддръжка на Finaboard</span>
+    </h1>
+</header>
+
+<nav class="language-switcher">
+    <ul>
+        <li><a href="javascript:void(0)" onclick="switchLanguage('en')">English</a></li>
+        <li><a href="javascript:void(0)" onclick="switchLanguage('bg')">Български</a></li>
+    </ul>
+</nav>
+
+<nav class="tab-nav">
+    <ul>
+        <li><a class="lang en" href="javascript:void(0);" onclick="switchTab('contact')">Contact</a></li>
+        <li><a class="lang bg" href="javascript:void(0);" onclick="switchTab('contact')">Контакти</a></li>
+
+        <li><a class="lang en" href="javascript:void(0);" onclick="switchTab('terms')">Terms of Use</a></li>
+        <li><a class="lang bg" href="javascript:void(0);" onclick="switchTab('terms')">Условия на Ползване</a></li>
+
+        <li><a class="lang en" href="javascript:void(0);" onclick="switchTab('privacy')">Privacy Policy</a></li>
+        <li><a class="lang bg" href="javascript:void(0);" onclick="switchTab('privacy')">Поверителност</a></li>
+    </ul>
+</nav>
+
+<div id="content">
+    <section id="contact" class="tab-content">
+        <h2>
+            <span class="lang en">Contact Us</span>
+            <span class="lang bg">Свържете се с нас</span>
+        </h2>
+        <p>
+            <span class="lang en">If you're experiencing issues or have questions, please email us at <a
+                    href="mailto:stanimir_i@icloud.com">stanimir_i@icloud.com</a>.</span>
+            <span class="lang bg">Ако имате проблеми или въпроси, моля пишете ни на <a
+                    href="mailto:stanimir_i@icloud.com">stanimir_i@icloud.com</a>.</span>
+        </p>
+    </section>
+    <section id="terms" class="tab-content">
+        <h2>
+            <span class="lang en">Terms of Use</span>
+            <span class="lang bg">Условия за ползване</span>
+        </h2>
+
+        <h5>
+            <span class="lang en">Introduction</span>
+            <span class="lang bg">Въведение</span>
+        </h5>
+
+        <p>
+            <span class="lang en">Welcome to Finaboard, a personal finance management application designed to help you oversee your financial activities effectively. By downloading, accessing, or using Finaboard ("App"), you agree to be bound by these Terms of Use ("Terms"). These Terms affect your legal rights and obligations, so please read them carefully.</span>
+            <span class="lang bg">Добре дошли в Finaboard, приложение за управление на личните финанси, предназначено да ви помогне ефективно да наблюдавате вашите финансови дейности. Като изтеглите, получите достъп или използвате Finaboard ("Приложението"), вие се съгласявате да бъдете обвързани с тези Условия за ползване ("Условия"). Тези Условия засягат вашите законни права и задължения, затова моля, прочетете ги внимателно.</span>
+        </p>
+
+        <h5>
+            <span class="lang en">Subscription Terms</span>
+            <span class="lang bg">Условия за абонамент</span>
+        </h5>
+
+        <p>
+            <span class="lang en">Finaboard offers various subscription plans that provide access to premium features. Subscriptions are billed on an auto-renewing basis, monthly. Payment will be charged to your iTunes Account at confirmation of purchase. Your subscription will automatically renew unless turned off at least 24 hours before the end of the current period. You can manage your subscriptions through your iTunes account settings after purchase.</span>
+            <span class="lang bg">Finaboard предлага различни абонаментни планове, които предоставят достъп до премиум функции. Абонаментите се таксуват на база автоматично подновяване, месечно. Плащането ще бъде начислено на вашия iTunes акаунт при потвърждение на покупката. Вашият абонамент ще се поднови автоматично, освен ако не бъде изключен поне 24 часа преди края на текущия период. Можете да управлявате вашите абонаменти чрез настройките на вашия iTunes акаунт след покупка.</span>
+        </p>
+
+        <h5>
+            <span class="lang en">Local Data Storage</span>
+            <span class="lang bg">Локално съхранение на данни</span>
+        </h5>
+
+        <p>
+            <span class="lang en">Finaboard is designed to store all your personal finance data locally on your device. No data is collected, transmitted, or stored online by Seven Seas. You are solely responsible for maintaining the confidentiality and security of your data stored within the app.</span>
+            <span class="lang bg">Finaboard е проектирано да съхранява всичките ви данни за лични финанси локално на вашето устройство. Никакви данни не се събират, предават или съхраняват онлайн от Seven Seas. Вие сте единствено отговорни за поддържането на конфиденциалността и сигурността на вашите данни, съхранени в приложението.</span>
+        </p>
+
+        <h5>
+            <span class="lang en">Intellectual Property Rights</span>
+            <span class="lang bg">Права върху интелектуалната собственост</span>
+        </h5>
+
+        <p>
+            <span class="lang en">All intellectual property rights in and to the App, including but not limited to design, text, graphics, logos, icons, images, and software, are owned by Seven Seas or its licensors. You are granted a non-exclusive, non-transferable, revocable license to use the App for your personal, non-commercial use in accordance with these Terms.</span>
+            <span class="lang bg">Всички права върху интелектуалната собственост на и за Приложението, включително, но не само дизайн, текст, графики, лога, икони, изображения и софтуер, са собственост на Seven Seas или неговите лицензодатели. На вас се предоставя неексклузивен, непрехвърляем, отменим лиценз за използване на Приложението за ваша лична, нетърговска употреба в съответствие с тези Условия.</span>
+        </p>
+
+        <h5>
+            <span class="lang en">Limitation of Liability</span>
+            <span class="lang bg">Ограничение на отговорността</span>
+        </h5>
+
+        <p>
+            <span class="lang en">Seven Seas shall not be liable for any direct, indirect, incidental, special, consequential, or exemplary damages, including but not limited to, damages for loss of profits, goodwill, use, data, or other intangible losses resulting from the use or inability to use the App.</span>
+            <span class="lang bg">Seven Seas не носи отговорност за каквито и да било преки, непреки, случайни, специални, последващи или примерни щети, включително, но не само, щети за загуба на печалби, добра воля, използване, данни или други нематериални загуби, произтичащи от използването или невъзможността за използване на Приложението.</span>
+        </p>
+
+        <h5>
+            <span class="lang en">Changes to Terms</span>
+            <span class="lang bg">Промени в условията</span>
+        </h5>
+
+        <p>
+            <span class="lang en">Seven Seas reserves the right to modify these Terms at any time. Your continued use of the App following any such changes constitutes your acceptance of the new Terms.</span>
+            <span class="lang bg">Seven Seas си запазва правото да модифицира тези Условия по всяко време. Вашето продължаващо използване на Приложението след такива промени представлява вашето приемане на новите Условия.</span>
+        </p>
+    </section>
+
+    <section id="privacy" class="tab-content">
+        <h2>
+            <span class="lang en">Privacy Policy</span>
+            <span class="lang bg">Политика за поверителност</span>
+        </h2>
+
+        <h5>
+            <span class="lang en">Data Storage and Security</span>
+            <span class="lang bg">Съхранение и сигурност на данни</span>
+        </h5>
+
+        <p>
+            <span class="lang en">Finaboard prioritizes your privacy. The App is engineered to store all your personal finance data locally on your device. No personal data is collected, transmitted, or stored online by us. As such, we do not share any personal information with third parties.</span>
+            <span class="lang bg">Finaboard отдава приоритет на вашата поверителност. Приложението е проектирано да съхранява всичките ви лични финансови данни локално на вашето устройство. Ние не събираме, не предаваме и не съхраняваме лични данни онлайн. Като такива, ние не споделяме никаква лична информация с трети страни.</span>
+        </p>
+
+        <h5>
+            <span class="lang en">Subscription Information</span>
+            <span class="lang bg">Информация за абонамента</span>
+        </h5>
+
+        <p>
+            <span class="lang en">Subscription handling, including payments and renewals, is managed by the App Store. Finaboard does not process, store, or have access to any financial information related to your subscriptions. All inquiries regarding subscription management should be directed to the App Store.</span>
+            <span class="lang bg">Управлението на абонаментите, включително плащанията и подновяванията, се извършва от App Store. Finaboard не обработва, не съхранява и няма достъп до никаква финансова информация, свързана с вашите абонаменти. Всички запитвания относно управлението на абонамента трябва да бъдат насочени към App Store.</span>
+        </p>
+
+        <h5>
+            <span class="lang en">Your Consent</span>
+            <span class="lang bg">Вашето съгласие</span>
+        </h5>
+
+        <p>
+            <span class="lang en">By using Finaboard, you consent to our Privacy Policy and agree to its terms.</span>
+            <span class="lang bg">Като използвате Finaboard, вие се съгласявате с нашата Политика за поверителност и приемате нейните условия.</span>
+        </p>
+
+        <h5>
+            <span class="lang en">Contact Us</span>
+            <span class="lang bg">Свържете се с нас</span>
+        </h5>
+
+        <p>
+            <span class="lang en">For any questions or comments regarding this Privacy Policy, please contact us at <a
+                    href="mailto:stanimir_i@icloud.com">stanimir_i@icloud.com</a>.</span>
+            <span class="lang bg">За всички въпроси или коментари относно тази Политика за поверителност, моля свържете се с нас на <a
+                    href="mailto:stanimir_i@icloud.com">stanimir_i@icloud.com</a>.</span>
+        </p>
+    </section>
+
+</div>
+
+<footer>
+    <p>
+        <span class="lang en">Thank you for using Finaboard!</span>
+        <span class="lang bg">Благодарим ви, че използвате Finaboard!</span>
+    </p>
+</footer>
+</body>
 </html>
